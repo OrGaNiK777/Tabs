@@ -1,0 +1,14 @@
+<div class="tabs">
+  <div
+    *ngFor="let tab of tabs; let i = index"
+    class="tab"
+    (click)="onClickTab(i)"
+    [class.selected]="tab.tabId === currentTabId"
+  >
+    <p>{{ tab.tabTitle }}</p>
+    <div>
+      <h1>123</h1>
+      <ng-content select={{ this.currentContent }}></ng-content>
+    </div>
+  </div>
+</div>

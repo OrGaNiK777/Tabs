@@ -1,0 +1,31 @@
+.tabs {
+  border-bottom: 2px solid lightgray;
+  display: flex;
+  margin-right: 10px;
+
+  .tab {
+    font-weight: 600;
+    cursor: pointer;
+    padding-bottom: 10px;
+    margin-right: 20px;
+
+    &.selected {
+      color: var(--header-panel-color-bg);
+      position: relative;
+      color: blue;
+
+      &::after {
+        background: var(--accent-color-bg);
+        bottom: -2px;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 0px;
+        position: absolute;
+        right: 0px;
+        width: auto;
+        z-index: 1;
+      }
+    }
+  }
+}
