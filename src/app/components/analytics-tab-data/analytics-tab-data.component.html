@@ -6,9 +6,9 @@
     [class.selected]="tab.tabId === currentTabId"
   >
     <p>{{ tab.tabTitle }}</p>
-    <div>
-      <h1>123</h1>
-      <ng-content select={{ this.currentContent }}></ng-content>
-    </div>
   </div>
+</div>
+<div *ngIf="this.currentContent">
+  <p *ngIf="this.currentContent">123</p>
+  <ng-content select={{ this.currentContent }}></ng-content>
 </div>
