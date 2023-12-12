@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AnalyticsTabData } from 'src/app/models/AnalyticsTabData';
-import { tabs } from '../../constants/tabs';
+import { tabs } from 'src/app/constants/tabs';
 
 @Component({
   selector: 'app-analytics-tab-data',
@@ -9,22 +9,20 @@ import { tabs } from '../../constants/tabs';
 })
 export class AnalyticsTabDataComponent implements OnInit {
   currentTabId!: string;
-  currentContent: string = ".main1";
   public tabs: AnalyticsTabData[] = [];
 
-  ngOnInit(): void {
-    this.getTabs();
+  @Output() newItemEvent = new EventEmitter<string>();
+
+  addNewItem(id: string) {
+    this.newItemEvent.emit(id);
   }
 
-  getTabs() {
+  ngOnInit(): void {
     this.tabs = tabs;
   }
 
   public async onClickTab(i: any): Promise<void> {
     this.currentTabId = this.tabs[i].tabId;
-    //this.currentContent = this.tabs[i].selectContent;
-    console.log(this.currentTabId);
-    console.log(this.currentContent);
-    console.log();
+    this.addNewItem(this.currentTabId);
   }
 }
