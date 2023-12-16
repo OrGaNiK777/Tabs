@@ -1,0 +1,23 @@
+div:nth-child(n) {
+  display: none;
+}
+
+.tab1 div:nth-child(1) {
+  display: block;
+}
+
+.tab2 div:nth-child(2) {
+  display: block;
+}
+
+.tab3 div:nth-child(3) {
+  display: block;
+}
+
+.tab4 div:nth-child(4) {
+  display: block;
+}
+
+.tab5 div:nth-child(5) {
+  display: block;
+}

@@ -12,10 +12,14 @@ export class TabGroup implements OnInit {
   currentContent!: string;
   public tabs: AnalyticsTabData[] = [];
 
-  @Output() newItemEvent = new EventEmitter<string>();
+  @Output() newTab = new EventEmitter<string>();
+  @Output() newContent = new EventEmitter<string>();
 
-  addNewItem(id: string) {
-    this.newItemEvent.emit(id);
+  addNewTab(id: string) {
+    this.newTab.emit(id);
+  }
+  addNewContent(id: string) {
+    this.newContent.emit(id);
   }
 
   ngOnInit(): void {
@@ -24,6 +28,8 @@ export class TabGroup implements OnInit {
 
   public async onClickTab(i: any): Promise<void> {
     this.currentTabId = this.tabs[i].tabId;
-    this.addNewItem(this.currentTabId);
+    this.currentContent = this.tabs[i].selectContent;
+    this.addNewTab(this.currentTabId);
+    this.addNewContent(this.currentContent);
   }
 }
