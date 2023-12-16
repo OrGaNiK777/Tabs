@@ -13,47 +13,27 @@ export class AppComponent implements OnInit, DoCheck {
   tabs: AnalyticsTabData[] = [];
 
   currentClasses: Record<string, boolean> = {};
-  tab1: boolean = false;
-  tab2: boolean = false;
-  tab3: boolean = false;
-  tab4: boolean = false;
-  tab5: boolean = false;
+  tab1!: boolean;
+  tab2!: boolean;
+  tab3!: boolean;
+  tab4!: boolean;
+  tab5!: boolean;
 
   addTab(id: string) {
     this.currentTabId = id;
     if (+this.currentTabId === 1) {
       this.tab1 = true;
-      this.tab2 = false;
-      this.tab3 = false;
-      this.tab4 = false;
-      this.tab5 = false;
     }
     if (+this.currentTabId === 2) {
-      this.tab1 = false;
       this.tab2 = true;
-      this.tab3 = false;
-      this.tab4 = false;
-      this.tab5 = false;
     }
     if (+this.currentTabId === 3) {
-      this.tab1 = false;
-      this.tab2 = false;
       this.tab3 = true;
-      this.tab4 = false;
-      this.tab5 = false;
     }
     if (+this.currentTabId === 4) {
-      this.tab1 = false;
-      this.tab2 = false;
-      this.tab3 = false;
       this.tab4 = true;
-      this.tab5 = false;
     }
     if (+this.currentTabId === 5) {
-      this.tab1 = false;
-      this.tab2 = false;
-      this.tab3 = false;
-      this.tab4 = false;
       this.tab5 = true;
     }
   }
@@ -73,5 +53,12 @@ export class AppComponent implements OnInit, DoCheck {
   }
 
   ngOnInit(): void {}
-  ngDoCheck() {this.setCurrentClasses()}
+  ngDoCheck() {
+    this.setCurrentClasses();
+    this.tab1 = false;
+    this.tab2 = false;
+    this.tab3 = false;
+    this.tab4 = false;
+    this.tab5 = false;
+  }
 }
