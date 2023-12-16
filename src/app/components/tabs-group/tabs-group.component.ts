@@ -3,12 +3,13 @@ import { AnalyticsTabData } from 'src/app/models/AnalyticsTabData';
 import { tabs } from 'src/app/constants/tabs';
 
 @Component({
-  selector: 'app-analytics-tab-data',
-  templateUrl: './analytics-tab-data.component.html',
-  styleUrls: ['./analytics-tab-data.component.css'],
+  selector: 'app-tabs-group',
+  templateUrl: './tabs-group.component.html',
+  styleUrls: ['./tabs-group.component.css'],
 })
-export class AnalyticsTabDataComponent implements OnInit {
+export class TabGroup implements OnInit {
   currentTabId!: string;
+  currentContent!: string;
   public tabs: AnalyticsTabData[] = [];
 
   @Output() newItemEvent = new EventEmitter<string>();

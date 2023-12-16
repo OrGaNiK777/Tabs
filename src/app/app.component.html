@@ -1,7 +1,9 @@
-<app-analytics-tab-data (newItemEvent)="addItem($event)">
-  <div *ngIf="currentTabId === currentTabId1" class="main1">main1</div>
-  <div *ngIf="currentTabId === currentTabId2" class="main2">main2</div>
-  <div *ngIf="currentTabId === currentTabId3" class="main3">main3</div>
-  <div *ngIf="currentTabId === currentTabId4" class="main4">main4</div>
-  <div *ngIf="currentTabId === currentTabId5" class="main5">main5</div>
-</app-analytics-tab-data>
+<app-tabs-group (newItemEvent)="addItem($event)">
+  <app-tab-content>
+    <div *ngIf="+currentTabId === 1" class="main1">main1</div>
+    <div *ngIf="+currentTabId === 2" class="main2">main2</div>
+    <div *ngIf="+currentTabId === 3" class="main3">main3</div>
+    <div *ngIf="+currentTabId === 4" class="main4">main4</div>
+    <div *ngIf="+currentTabId === 5" class="main5">main5</div>
+  </app-tab-content>
+</app-tabs-group>
